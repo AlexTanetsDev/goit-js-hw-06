@@ -1,6 +1,6 @@
 const validationImputRef = document.querySelector("#validation-input");
 
-validationImputRef.addEventListener("input", (event) => {
+validationImputRef.addEventListener("blur", (event) => {
   if (
     event.currentTarget.value.length ===
     Number(validationImputRef.dataset.length)
@@ -9,9 +9,5 @@ validationImputRef.addEventListener("input", (event) => {
     validationImputRef.classList.remove("invalid");
   } else {
     validationImputRef.classList.add("invalid");
-    validationImputRef.classList.remove("valid");
-  }
-  if (event.currentTarget.value.length === 0) {
-    validationImputRef.classList.remove("invalid");
   }
 });
